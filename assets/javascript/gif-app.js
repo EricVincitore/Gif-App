@@ -1,12 +1,13 @@
 var animals = ["cat", "dog", "shark", "sloth"];
-
+console.log(animals);
 
 function getAnimal () {
     var search = $(".form-control").val().trim();
     $(".form-control").val("");
-    console.log(search)
+    console.log(search);
+    animals.push(search);
+    console.log(animals);
 };
-
 
 var queryURL = "api.giphy.com/v1/gifs/search?&q=" +
   + "&api_key=7Wkp2d9UIXdEznvgxR7roo4cBBH7gQC6";
