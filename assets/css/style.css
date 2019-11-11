@@ -1,0 +1,13 @@
+body {
+    background: url(http://hdwpro.com/wp-content/uploads/2017/10/Cool-Space-Background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+h1, h5 {
+    text-align: center;
+}
+label {
+    font-weight: bold;
+    color: white;
+}
