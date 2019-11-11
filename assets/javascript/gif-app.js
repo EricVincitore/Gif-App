@@ -3,7 +3,7 @@ var animals = ["cat", "dog", "shark", "sloth"];
 
 function getAnimal () {
     var search = $(".form-control").val().trim();
-    $(".form-control").empty();
+    $(".form-control").val("");
     console.log(search)
 };
 
