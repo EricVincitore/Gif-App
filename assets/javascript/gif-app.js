@@ -1,16 +1,40 @@
+//array of animals
 var animals = ["cat", "dog", "shark", "sloth"];
 console.log(animals);
 
-function getAnimal () {
-    var search = $(".form-control").val().trim();
-    $(".form-control").val("");
-    console.log(search);
-    animals.push(search);
-    console.log(animals);
+//loop to make the buttons
+function btnLoop() {
+  for (let i = 0; i < animals.length; i++) {
+
+    var gifBtn = $("<button>");
+
+    gifBtn.addClass("btn btn-success gifTrigger")
+
+    gifBtn.attr("data-letter", animals[i]);
+
+    gifBtn.text(animals[i]);
+
+    $(".btn-div").append(gifBtn);
+
+    console.log(gifBtn)
+  }
+}
+
+//function to take user input of animal
+function getAnimal() {
+  
+  var search = $(".form-control").val().trim();
+  $(".form-control").val("");
+  console.log(search);
+
+  animals.push(search);
+  console.log(animals);
 };
 
+
+
 var queryURL = "api.giphy.com/v1/gifs/search?&q=" +
-  + "&api_key=7Wkp2d9UIXdEznvgxR7roo4cBBH7gQC6";
+  +"&api_key=7Wkp2d9UIXdEznvgxR7roo4cBBH7gQC6";
 
 
 
@@ -23,8 +47,8 @@ var queryURL = "api.giphy.com/v1/gifs/search?&q=" +
 
 
 // *** 1. array of animals to loop through for buttons
-// 2. var to pick up what animal the user adds through the search form
-//      a. adds user animal input to array
+// *** 2. var to pick up what animal the user adds through the search form
+// ***      a. adds user animal input to array
 //      a. does not add if animal is already in the array
 //      b. alert user if animal is already in the array
 // 3. make buttons dynamically of each animal in the animal array
