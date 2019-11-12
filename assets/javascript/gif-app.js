@@ -6,6 +6,8 @@ console.log(animals);
 function btnLoop() {
   for (let i = 0; i < animals.length; i++) {
 
+    $(".btn-div").empty();
+
     var gifBtn = $("<button>");
 
     gifBtn.addClass("btn btn-success gifTrigger")
@@ -20,6 +22,8 @@ function btnLoop() {
   }
 }
 
+btnLoop();
+
 //function to take user input of animal
 function getAnimal() {
   
@@ -27,8 +31,17 @@ function getAnimal() {
   $(".form-control").val("");
   console.log(search);
 
-  animals.push(search);
-  console.log(animals);
+  if (animals.includes(search)) {
+    
+    alert("That animal is already there!")
+
+  } else {
+
+    animals.push(search);
+    console.log(animals);
+    btnLoop();
+
+  } 
 };
 
 
