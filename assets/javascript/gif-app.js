@@ -1,16 +1,21 @@
+$(document).ready(function () {
+  btnLoop();
+});
+
 //array of animals
 var animals = ["cat", "dog", "shark", "sloth"];
 console.log(animals);
 
 //loop to make the buttons
 function btnLoop() {
-  for (let i = 0; i < animals.length; i++) {
 
-    $(".btn-div").empty();
+  $(".btn-div").empty();
+
+  for (let i = 0; i < animals.length; i++) {
 
     var gifBtn = $("<button>");
 
-    gifBtn.addClass("btn btn-success gifTrigger")
+    gifBtn.addClass("btn btn-success gifTrigger");
 
     gifBtn.attr("data-letter", animals[i]);
 
@@ -18,21 +23,19 @@ function btnLoop() {
 
     $(".btn-div").append(gifBtn);
 
-    console.log(gifBtn)
+    console.log(animals[i]);
   }
 }
 
-btnLoop();
-
 //function to take user input of animal
 function getAnimal() {
-  
+
   var search = $(".form-control").val().trim();
   $(".form-control").val("");
   console.log(search);
 
   if (animals.includes(search)) {
-    
+
     alert("That animal is already there!")
 
   } else {
@@ -41,10 +44,8 @@ function getAnimal() {
     console.log(animals);
     btnLoop();
 
-  } 
+  }
 };
-
-
 
 var queryURL = "api.giphy.com/v1/gifs/search?&q=" +
   +"&api_key=7Wkp2d9UIXdEznvgxR7roo4cBBH7gQC6";
