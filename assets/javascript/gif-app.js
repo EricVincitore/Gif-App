@@ -4,9 +4,11 @@ $(document).ready(function () {
   //starting buttons
   btnLoop();
 
-  //enter key submits instead of reloading page
+  //event listener for enter key
   $(document).on("keypress",function(e) {
     if (e.which == 13) {
+
+      //stops page reload/takes input
       e.preventDefault();
       getAnimal();
     };
@@ -23,16 +25,22 @@ function btnLoop() {
 
   $(".btn-div").empty();
 
+  //loops through animals array
   for (let i = 0; i < animals.length; i++) {
 
+    //creates button
     var gifBtn = $("<button>");
 
+    //adds class & bootstrap
     gifBtn.addClass("btn btn-success gifTrigger");
 
+    //button data attribute
     gifBtn.attr("data-letter", animals[i]);
 
+    //button text
     gifBtn.text(animals[i]);
 
+    //appends to page
     $(".btn-div").append(gifBtn);
 
     console.log(animals[i]);
@@ -47,12 +55,14 @@ function getAnimal() {
   $(".form-control").val("");
   console.log(search);
 
+  //checks if input already exists
   if (animals.includes(search)) {
 
     alert("That animal is already there!")
 
   } else {
 
+    //adds input to array and creates new buttons
     animals.push(search);
     console.log(animals);
     btnLoop();
