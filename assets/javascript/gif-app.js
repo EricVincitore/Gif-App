@@ -1,18 +1,20 @@
-//ensures dom is ready when buttons generate
+//ensures dom is ready
 $(document).ready(function () {
-  btnLoop();
   
-  //TODO: fix event key listener for enter key
-  if (keyCode == '13') {
-    //stops page reload
-    event.preventDefault();
-    //runs user input and button creation loop
-    getAnimal();
-  }
+  //starting buttons
+  btnLoop();
+
+  //enter key submits instead of reloading page
+  $(document).on("keypress",function(e) {
+    if (e.which == 13) {
+      e.preventDefault();
+      getAnimal();
+    };
+  });
 });
 
 
-//array of animals
+//array of animals for buttons
 var animals = ["cat", "dog", "shark", "sloth"];
 console.log(animals);
 
@@ -39,11 +41,12 @@ function btnLoop() {
 
 //function to take user input of animal
 function getAnimal() {
-
+  
+  //takes input value and clears form
   var search = $(".form-control").val().trim();
   $(".form-control").val("");
   console.log(search);
-  event.preventDefault();
+
   if (animals.includes(search)) {
 
     alert("That animal is already there!")
@@ -57,17 +60,16 @@ function getAnimal() {
   }
 };
 
-var queryURL = "api.giphy.com/v1/gifs/search?&q=" +
-  +"&api_key=7Wkp2d9UIXdEznvgxR7roo4cBBH7gQC6";
+//var animalSearch = $(this).attr("data-letter");
 
+//var queryURL = "api.giphy.com/v1/gifs/search?&q=" + animalSearch +"&api_key=7Wkp2d9UIXdEznvgxR7roo4cBBH7gQC6";
 
-
-//$.ajax({
-//    url: queryURL,
-//    method: "GET"
-//  }).then(function(response) {
-//    console.log(response);
-//  });
+// $.ajax({
+//   url: queryURL,
+//   method: "GET"
+// }).then(function (response) {
+//   console.log(response);
+// });
 
 
 // *** 1. array of animals to loop through for buttons
