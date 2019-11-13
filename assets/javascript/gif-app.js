@@ -60,6 +60,10 @@ function getAnimal() {
 
     alert("That animal is already there!")
 
+  } else if (search.includes("")) {
+
+    alert("You have to add an animal!")
+
   } else {
 
     //adds input to array and creates new buttons
@@ -69,6 +73,10 @@ function getAnimal() {
 
   }
 };
+
+$(".reset-btn").click(function () {
+  
+})
 
 //var animalSearch = $(this).attr("data-letter");
 
