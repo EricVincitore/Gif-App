@@ -14,3 +14,6 @@ label {
 .btn-success {
     margin: 0% 1% 0% 1% ;
 }
+.gif-div {
+    overflow: scroll;
+}
