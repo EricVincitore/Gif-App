@@ -92,9 +92,7 @@ function getGif() {
     console.log(response);
     var data = response.data;
 
-    for (let i = 0; i < data.length; i++) {
-
-      for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
 
         let topicDiv = $("<div class='topicDiv d-flex'>");
         let rating = $("<p>").text("Rating: " + data[i].rating);
@@ -112,7 +110,7 @@ function getGif() {
         topicDiv.append(img1, img2);
 
         $(".gif-div").prepend(topicDiv)
-      };
+    
     };
   });
 };
@@ -135,8 +133,8 @@ $(document).on("click", "img", function () {
 // ***      a. clear div that gifs go in
 // ***      b. take input and search giphy
 // ***      c. filter results by rating
-//      d. make page scrollable
+// ***     d. make page scrollable
 // ***      e. fix reset button
-//      f. filter to only show 10 results
+// ***     f. filter to only show 10 results
 // ***      g. on click to start and stop gif
 // ***     h. add css to make all cards the same size
