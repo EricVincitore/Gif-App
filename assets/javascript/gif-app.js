@@ -57,9 +57,9 @@ function getAnimal() {
 
     alert("That animal is already there!")
 
-    //} else if (search.includes("")) {
+  } else if (search.includes("")) {
 
-    // alert("You have to add an animal!")
+    alert("You have to add an animal!")
 
   } else {
 
@@ -71,7 +71,7 @@ function getAnimal() {
   }
 };
 
-function () {
+function empty() {
 
   $(".gif-div").empty();
 
@@ -94,23 +94,26 @@ function getGif() {
 
     for (let i = 0; i < data.length; i++) {
 
-      let topicDiv = $("<div class='topicDiv d-flex'>");
-      let rating = $("<p>").text("Rating: " + data[i].rating);
+      for (let i = 0; i < 10; i++) {
 
-      topicDiv.append(rating);
+        let topicDiv = $("<div class='topicDiv d-flex'>");
+        let rating = $("<p>").text("Rating: " + data[i].rating);
 
-      let img1 = $("<img>");
-      img1.attr("src", data[i].images.fixed_height_still.url);
+        topicDiv.append(rating);
 
-      let img2 = $("<img>");
-      img2.attr("src", data[i].images.fixed_height.url);
+        let img1 = $("<img>");
+        img1.attr("src", data[i].images.fixed_height_still.url);
 
-      img2.hide();
+        let img2 = $("<img>");
+        img2.attr("src", data[i].images.fixed_height.url);
 
-      topicDiv.append(img1, img2);
+        img2.hide();
 
-      $(".gif-div").prepend(topicDiv)
-    }
+        topicDiv.append(img1, img2);
+
+        $(".gif-div").prepend(topicDiv)
+      };
+    };
   });
 };
 
@@ -129,11 +132,11 @@ $(document).on("click", "img", function () {
 // *** 4. var for api url including api key
 // *** 5. function to start working with the api 
 // *** 6. on click event to post 10 gifs to card
-//      a. clear div that gifs go in
+// ***      a. clear div that gifs go in
 // ***      b. take input and search giphy
 // ***      c. filter results by rating
 //      d. make page scrollable
-//      e.fix reset button
+// ***      e. fix reset button
 //      f. filter to only show 10 results
 // ***      g. on click to start and stop gif
-//      h. add css to make all cards the same size
+// ***     h. add css to make all cards the same size
