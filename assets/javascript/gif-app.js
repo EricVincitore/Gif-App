@@ -57,9 +57,9 @@ function getAnimal() {
 
     alert("That animal is already there!")
 
-  } else if (search.includes("")) {
+    //} else if (search.includes("")) {
 
-    alert("You have to add an animal!")
+    // alert("You have to add an animal!")
 
   } else {
 
@@ -71,39 +71,50 @@ function getAnimal() {
   }
 };
 
-$(".btn-danger").click(function () {
+function () {
 
   $(".gif-div").empty();
 
-});
+};
 
-var cors = "https://cors-anywhere.herokuapp.com/";
+
 
 function getGif() {
+  var cors = "https://cors-anywhere.herokuapp.com/";
   var animalSearch = $(this).text().trim();
   var queryURL = cors + "api.giphy.com/v1/gifs/search?&q=" + animalSearch + "&api_key=7Wkp2d9UIXdEznvgxR7roo4cBBH7gQC6";
-  
+  console.log("do i work")
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
+
     console.log(response);
     var data = response.data;
+
     for (let i = 0; i < data.length; i++) {
+
       let topicDiv = $("<div class='topicDiv d-flex'>");
       let rating = $("<p>").text("Rating: " + data[i].rating);
+
       topicDiv.append(rating);
+
       let img1 = $("<img>");
       img1.attr("src", data[i].images.fixed_height_still.url);
+
       let img2 = $("<img>");
       img2.attr("src", data[i].images.fixed_height.url);
+
       img2.hide();
+
       topicDiv.append(img1, img2);
+
       $(".gif-div").prepend(topicDiv)
     }
   });
 };
-$(document).on("click", ".success-btn", getGif)
+
+$(document).on("click", ".gifTrigger", getGif)
 $(document).on("click", "img", function () {
   $(this).hide();
   $(this).siblings().show();
@@ -115,12 +126,14 @@ $(document).on("click", "img", function () {
 // ***      a. does not add if animal is already in the array
 // ***      b. alert user if animal is already in the array
 // *** 3. make buttons dynamically of each animal in the animal array
-// 4. var for api url including api key
+// *** 4. var for api url including api key
 // *** 5. function to start working with the api 
-// 6. on click event to post 10 gifs to card
+// *** 6. on click event to post 10 gifs to card
 //      a. clear div that gifs go in
-//      b. take input and search giphy
-//      c. filter results by rating
-//      d. filter to only show 10 results
-//      e. on click to start and stop gif
-//      f. add css to make all cards the same size
+// ***      b. take input and search giphy
+// ***      c. filter results by rating
+//      d. make page scrollable
+//      e.fix reset button
+//      f. filter to only show 10 results
+// ***      g. on click to start and stop gif
+//      h. add css to make all cards the same size
