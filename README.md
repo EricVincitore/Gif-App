@@ -12,19 +12,19 @@ Gif-It allows the user to add any animal they want to the already existing anima
 1. Navigate to the page for the app using the link below or at the bottom of this README.    
 * https://ericvincitore.github.io/Gif-App/
 
-2. The user should be redirected to a new page with the c.  
-![Homepage](public/img/Capture.PNG)
+2. The user should be redirected to the following page.  
+![Homepage](assets/images/homepage.PNG)
 
-3. Whenever the user is ready to start the game they just need to click an image. Their score will be kept track of in the upper right corner and the images will shuffle after each click.  
+3. The user can add an animal to the list of buttons using the input box and clicking submit.  
 
-* Before Click  
-![Before Click](public/img/before.PNG)
+*   
+![Input](assets/images/homepage.PNG)
 
-* After Click  
-![After Click](public/img/after.PNG)
+*   
+![Homepage](assets/images/homepage.PNG)
 
 4. The game will alert the user if they have clicked the same image with a loss alert.
-![Loss Screen](public/img/loss.PNG)
+![Homepage](assets/images/homepage.PNG)
 
 
 

@@ -57,7 +57,7 @@ function getAnimal() {
 
     alert("That animal is already there!")
 
-  } else if (search.includes("")) {
+  } else if (search === "") {
 
     alert("You have to add an animal!")
 
