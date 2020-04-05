@@ -17,14 +17,14 @@ Gif-It allows the user to add any animal they want to the already existing anima
 
 3. The user can add an animal to the list of buttons using the input box and clicking submit.  
 
-*   
-![Input](assets/images/homepage.PNG)
+* Before Submit    
+![Input](assets/images/input.PNG)
 
-*   
-![Homepage](assets/images/homepage.PNG)
+* After Submit  
+![Submit](assets/images/after.PNG)
 
-4. The game will alert the user if they have clicked the same image with a loss alert.
-![Homepage](assets/images/homepage.PNG)
+4. The user can then click an animal button to generate a list of gifs. They can play and pause the gifs by clicking the gif.
+![Results](assets/images/results.PNG)
 
 
 
